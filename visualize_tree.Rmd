@@ -1,0 +1,31 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+getwd()
+library("ape")
+```
+
+```{r}
+file = "voir"
+string_to_parse <- readLines(file)
+tree_line_index = grep(pattern="[", x = a, fixed=T)
+tree_lines = string_to_parse[tree_line_index]
+```
+
+
+
+```{r,fig.width=7}
+for (line in tree_lines){
+plot(read.tree(text = line)) 
+}
+```
+
+```{r}
+my_read =table(rpois(1000000000,5))
+```
+```{r}
+plot(as.integer(rownames(my_read)),as.integer(my_read),log = "xy",type = "l")
+```
+

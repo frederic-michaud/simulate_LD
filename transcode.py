@@ -36,7 +36,7 @@ def transcode(infile: str, outfile: str, nb_individual: int,nb_site: int):
                 listsnp = [locus[individual][snp] for individual in range(nb_individual)]
                 listint = list(map(int, listsnp))
                 nb_polymorphism = sum(listint)
-                if nb_polymorphism > 1:
+                if nb_polymorphism > 0:
                     count_loci = count_loci + 1
                     write_header(f,locus_index, id_snp, float(position_loci[locus_index][snp]))
                     for individual in range(nb_individual):
